@@ -1,0 +1,33 @@
+import java.util.Arrays;
+
+public class RecursiveBinary {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]= {10,23,45,67,1,23,12,66};
+		Arrays.sort(arr);
+		int key=67;
+		int b=binary(arr,key,0,arr.length-1);
+			System.out.println(b);
+
+	}
+	public static int binary(int arr[],int key,int l,int r) {
+		
+		int mid=(l+r)/2;
+		if(arr[mid]==key) {
+			return mid;
+		}
+		if(l>=r) {
+			return -1;
+		}
+		if(key>arr[mid]) {
+			return binary(arr,key,mid+1,r);
+		}
+		return binary(arr,key,l,mid-1);
+		
+		
+		
+		
+	}
+
+}
